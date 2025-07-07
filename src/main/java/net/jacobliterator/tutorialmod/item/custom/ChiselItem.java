@@ -1,5 +1,6 @@
 package net.jacobliterator.tutorialmod.item.custom;
 
+import net.jacobliterator.tutorialmod.block.ModBlocks;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -24,7 +25,7 @@ public class ChiselItem extends Item {
                     Blocks.POLISHED_BLACKSTONE, Blocks.POLISHED_BLACKSTONE_BRICKS,
                     Blocks.BLACKSTONE, Blocks.POLISHED_BLACKSTONE,
                     Blocks.PRISMARINE, Blocks.PRISMARINE_BRICKS,
-                    Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BRICKS,
+                    ModBlocks.BISMUTH_BLOCK.get(), ModBlocks.MAGIC_BLOCK.get(),
                     Blocks.TUFF, Blocks.TUFF_BRICKS
 
             );
