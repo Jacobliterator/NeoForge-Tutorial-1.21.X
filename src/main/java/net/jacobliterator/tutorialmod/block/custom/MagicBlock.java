@@ -1,6 +1,7 @@
 package net.jacobliterator.tutorialmod.block.custom;
 
 import net.jacobliterator.tutorialmod.item.ModItems;
+import net.jacobliterator.tutorialmod.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -36,7 +37,7 @@ public class MagicBlock extends Block {
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         if(entity instanceof ItemEntity itemEntity) {
-            if(itemEntity.getItem().getItem() == ModItems.RAW_BISMUTH.get()) {
+            if(isValidItem(itemEntity.getItem())) {
                 itemEntity.setItem(new ItemStack(Items.DIAMOND, itemEntity.getItem().getCount()));
                 level.playSound(null, pos, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1f, 3f);
 
@@ -49,6 +50,10 @@ public class MagicBlock extends Block {
         }
 
         super.stepOn(level, pos, state, entity);
+    }
+
+    private boolean isValidItem(ItemStack item) {
+        return item.is(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 
     @Override
