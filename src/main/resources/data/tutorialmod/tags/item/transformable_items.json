@@ -3,7 +3,6 @@
     "tutorialmod:bismuth",
     "tutorialmod:raw_bismuth",
     "minecraft:coal",
-    "minecraft:diamond",
     {
       "id": "create:brass_ingot",
       "required": false
